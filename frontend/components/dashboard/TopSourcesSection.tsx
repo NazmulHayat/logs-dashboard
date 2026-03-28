@@ -30,7 +30,7 @@ export function TopSourcesSection({
 
       {sourceFilterActive && (
         <p className="mb-3.5 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2.5 text-[0.8125rem] leading-[1.45] text-amber-900" role="status">
-          Only one source selected. Clear the source filter to compare top contributing sources.
+          Clear the source filter to compare top contributing sources.
         </p>
       )}
 

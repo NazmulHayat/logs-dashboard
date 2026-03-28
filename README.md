@@ -64,6 +64,8 @@ Run only validation tests:
 pytest tests/test_validation.py -vv
 ```
 
+**NOTE: Dummy data for testing:** The repo includes [`logs_dummy_1000.csv`](logs_dummy_1000.csv) at the project root (~1000 sample rows in the correct CSV shape). With the app running, open **Logs → Import from CSV**, select that file, review the validation summary, and confirm import to fill the dashboard and filters for exploration.
+
 ## API Overview
 
 - `GET /api/logs` — list and filter logs (date range, severity, source, sort, pagination)
@@ -76,7 +78,7 @@ pytest tests/test_validation.py -vv
 - `GET /api/logs/analytics/severity-distribution` — severity histogram data for the selected date range and source
 - `GET /api/logs/analytics/summary` — summary counters (total logs, error logs, unique sources)
 
-## Design Decisions & Implementation Notes
+##   Decisions & Implementation Notes
 
 - **Severity is a small, fixed set**: severity is an enum (`DEBUG`, `INFO`, `WARNING`, `ERROR`). Keeping it fixed makes filtering and analytics predictable and avoids messy, free‑text values.
 - **Sources stay flexible**: `source` is validated (trimmed, non‑blank) but not an enum. New apps or services can start sending logs without any backend change.

@@ -70,7 +70,6 @@ const sortLabels: Record<string, string> = {
   timestamp: "Timestamp",
   severity: "Severity",
   source: "Source",
-  created_at: "Created",
   id: "ID",
 };
 

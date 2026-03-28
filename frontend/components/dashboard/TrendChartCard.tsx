@@ -126,6 +126,7 @@ export function TrendChartCard({ points, startDate, endDate, loading, error, sev
     );
   }
 
+  // calculate the y-axis scale and the width of the SVG
   const counts = buckets.map((b) => b.count);
   const yTop = yScaleTop(Math.max(...counts, 0));
   const svgW = frameW > 0 ? frameW : 960;
@@ -138,8 +139,8 @@ export function TrendChartCard({ points, startDate, endDate, loading, error, sev
   const xAt = (i: number) => n <= 1 ? PAD_L + innerW / 2 : PAD_L + (innerW * i) / (n - 1);
   const yAt = (count: number) => PAD_T + innerH - (Math.min(count, yTop) / yTop) * innerH;
 
-  const coords = buckets.map((b, i) => ({ x: xAt(i), y: yAt(b.count), ...b }));
-  const lineD = coords.map((c, i) => `${i === 0 ? "M" : "L"} ${c.x.toFixed(1)} ${c.y.toFixed(1)}`).join(" ");
+  const coords = buckets.map((b, i) => ({ x: xAt(i), y: yAt(b.count), ...b })); //list of SVG coord
+  const lineD = coords.map((c, i) => `${i === 0 ? "M" : "L"} ${c.x.toFixed(1)} ${c.y.toFixed(1)}`).join(" "); // SVG path data ~ line
   const firstX = coords[0].x;
   const lastX = coords[coords.length - 1].x;
   const areaD = n === 1
@@ -147,10 +148,11 @@ export function TrendChartCard({ points, startDate, endDate, loading, error, sev
     : `${lineD} L ${lastX.toFixed(1)} ${baseY} L ${firstX.toFixed(1)} ${baseY} Z`;
 
   const gridLines = yTickValues(yTop, 5).map((val) => ({ y: PAD_T + innerH - (val / yTop) * innerH, val }));
-  // On narrow widths, floor(svgW/120) is often 2 — only start/end. Prefer at least 3 ticks
-  // (start / ~mid / end) when there are enough buckets so phones get a middle date.
+
+  // determine the number of x-axis labels to show
   const maxLabels = Math.max(3, Math.floor(svgW / MIN_PX_PER_LABEL));
   const labelIndices = xLabelIndices(n, maxLabels);
+  // calculate the width of each slot on the x-axis
   const slotWidth = n > 1 ? innerW / (n - 1) : innerW;
 
   return (

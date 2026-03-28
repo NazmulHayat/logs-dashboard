@@ -62,7 +62,6 @@ export const SORTABLE_FIELDS = [
   "timestamp",
   "severity",
   "source",
-  "created_at",
   "id",
 ] as const;
 
