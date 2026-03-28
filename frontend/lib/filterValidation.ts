@@ -29,7 +29,7 @@ function validateDateRange(
     if (diffDays > MAX_DATE_RANGE_DAYS) {
       return {
         ok: false,
-        error: `Date range must be ${MAX_DATE_RANGE_DAYS} days or fewer.`,
+        error: "Date range must be 5 years or fewer.",
       };
     }
   }

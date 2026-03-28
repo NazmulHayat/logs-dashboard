@@ -17,5 +17,5 @@ def reject_bad_date_range(
         if (end_date - start_date).days > MAX_DATE_RANGE_DAYS:
             raise HTTPException(
                 status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
-                detail=f"date range must be {MAX_DATE_RANGE_DAYS} days or fewer",
+                detail="date range must be 5 years or fewer",
             )
