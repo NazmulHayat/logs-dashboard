@@ -76,7 +76,7 @@ Run only validation tests:
 pytest tests/test_validation.py -vv
 ```
 
-**NOTE: Dummy data for testing:** The repo includes [`logs_dummy_1000.csv`](logs_dummy_1000.csv) at the project root (~1000 sample rows in the correct CSV shape). With the app running, open **Logs → Import from CSV**, select that file, review the validation summary, and confirm import to fill the dashboard and filters for exploration.
+**NOTE: Dummy data for testing:** The repo includes [`/data/logs_dummy_1000.csv`](/data/logs_dummy_1000.csv) at the project root (~1000 sample rows in the correct CSV shape). With the app running, open **Logs → Import from CSV**, select that file, review the validation summary, and confirm import to fill the dashboard and filters for exploration.
 
 ## API Overview
 
