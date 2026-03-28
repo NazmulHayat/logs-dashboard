@@ -1,5 +1,8 @@
 # Logs Dashboard
 
+<img width="1630" height="885" alt="image" src="https://github.com/user-attachments/assets/e83b6257-0665-4d2e-88f8-963858a53f9e" /> 
+<img width="1630" height="650" alt="image" src="https://github.com/user-attachments/assets/429edd1d-f1a7-4200-8ee0-f5e1cc0c58b8" /> <img width="1611" height="942" alt="image" src="https://github.com/user-attachments/assets/3a78f4cc-51b4-41ec-8ba7-4f2191d93f8a" />
+
 ## Project Overview
 
 Logs Dashboard is a full-stack log dashboard system to ingest, filter, and visualize logs.
