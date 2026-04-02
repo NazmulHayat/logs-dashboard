@@ -17,9 +17,14 @@ class Log(Base):
             "severity IN ('DEBUG', 'INFO', 'WARNING', 'ERROR')",
             name="ck_logs_severity",
         ),
+        # Read-heavy dashboard: 
+        # single-column indexes for simple filters and sorts.
         Index("ix_logs_timestamp", "timestamp"),
         Index("ix_logs_severity", "severity"),
         Index("ix_logs_source", "source"),
+        # Composite indexes: faster searches when common filters are combined (date range + severity, etc.).
+        Index("ix_logs_timestamp_severity", "timestamp", "severity"),
+        Index("ix_logs_timestamp_severity_source", "timestamp", "severity", "source")
     )
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)

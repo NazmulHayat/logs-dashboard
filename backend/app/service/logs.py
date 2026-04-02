@@ -70,6 +70,7 @@ def delete_log(db: Session, log_id: int) -> bool:
     logger.info("Deleted log id=%s", log_id)
     return True
 
+
 def list_logs(
     db: Session,
     *,

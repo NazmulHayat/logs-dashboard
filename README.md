@@ -38,7 +38,7 @@ Key features:
 ## Project structure
 
 - **`frontend/`** — Next.js app (pages, React components, client-side filters, charts, CSV import UI, etc). 
-- **`backend/`** — FastAPI application: routers, Pydantic schemas, SQLAlchemy models, analytics and log services, pytest suite.
+- **`backend/`** — FastAPI application: routers, Pydantic schemas, SQLAlchemy models, `app/service/` (log and analytics logic), pytest suite.
 - **`docker-compose.yml`** — Runs the frontend, API, and PostgreSQL together for local development.
 
 ## Run Locally

@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 
 from app.date_range_validation import reject_bad_date_range
 from app.database import SessionLocal
-import app.logs as log_service
+from app.service import logs as log_service
 from app.schemas import (
     BulkLogCreateRequest,
     LogCreate,

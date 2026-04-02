@@ -3,7 +3,7 @@ from datetime import datetime
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy.orm import Session
 
-import app.analytics as analytics_service
+from app.service import analytics as analytics_service
 from app.date_range_validation import reject_bad_date_range
 from app.database import SessionLocal
 from app.schemas import (

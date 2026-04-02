@@ -20,6 +20,7 @@ import { TrendChartCard } from "./TrendChartCard";
 const SECTION = "mb-7 rounded-[10px] border border-border bg-surface p-6 shadow-card";
 
 export function DashboardPageContent() {
+  // state management
   const toast = useToast();
   const [draft, setDraft] = useState<DashboardFilterValues>(() => getDefaultDashboardFilters());
   const [applied, setApplied] = useState<DashboardFilterValues>(() => getDefaultDashboardFilters());
